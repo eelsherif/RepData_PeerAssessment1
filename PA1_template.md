@@ -30,7 +30,7 @@ hist(total_steps$steps, main = paste("Total Steps Per Day"), col="red", xlab="St
 steps_mean <- mean(total_steps$steps)
 steps_median <- median(total_steps$steps)
 ```
-
+The mean is 1.0766189\times 10^{4} and the median is 10765.
 
 ## What is the average daily activity pattern?
 
@@ -58,6 +58,7 @@ total_steps_new <- aggregate(steps ~ date, imputed_activity, sum)
 plot.new()
 hist(total_steps_new$steps,  main = paste("Total Steps Each Day"), col="blue")
 hist(total_steps$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T)
+legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 

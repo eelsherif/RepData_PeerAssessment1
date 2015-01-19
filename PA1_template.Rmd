@@ -30,7 +30,7 @@ steps_mean <- mean(total_steps$steps)
 steps_median <- median(total_steps$steps)
 
 ```
-
+The mean is `r steps_mean` and the median is `r steps_median`.
 
 ## What is the average daily activity pattern?
 
@@ -53,6 +53,7 @@ total_steps_new <- aggregate(steps ~ date, imputed_activity, sum)
 plot.new()
 hist(total_steps_new$steps,  main = paste("Total Steps Each Day"), col="blue")
 hist(total_steps$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T)
+legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 
 steps_mean_new <- mean(total_steps_new$steps)
 steps_median_new <- median(total_steps_new$steps)
